@@ -4,7 +4,7 @@ Name:           libmatthew-java
 Version:        0.8
 Release:        15.1
 Summary:        A few useful Java libraries
-Group:          Development/Libraries
+Group:          Development/Java
 License:        MIT
 
 # actual upstream:
