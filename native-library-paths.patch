@@ -1,0 +1,36 @@
+diff -ruN libmatthew-java-0.8/cx/ath/matthew/cgi/CGI.java libmatthew-java-0.8/cx/ath/matthew/cgi/CGI.java
+--- libmatthew-java-0.8/cx/ath/matthew/cgi/CGI.java	2011-10-11 14:01:51.256893486 -0400
++++ libmatthew-java-0.8/cx/ath/matthew/cgi/CGI.java	2011-10-11 15:00:07.278193101 -0400
+@@ -59,7 +59,7 @@
+    private native Object[] getfullenv(Class c);
+    private native void setenv(String var, String value);
+    {
+-      System.loadLibrary("cgi-java");
++      System.load("@JNIPATH@/" + System.mapLibraryName("cgi-java"));
+    }
+ 
+    /**
+diff -ruN libmatthew-java-0.8/cx/ath/matthew/unix/UnixServerSocket.java libmatthew-java-0.8/cx/ath/matthew/unix/UnixServerSocket.java
+--- libmatthew-java-0.8/cx/ath/matthew/unix/UnixServerSocket.java	2011-10-11 14:01:51.272892474 -0400
++++ libmatthew-java-0.8/cx/ath/matthew/unix/UnixServerSocket.java	2011-10-11 15:03:24.299532318 -0400
+@@ -33,7 +33,7 @@
+  */
+ public class UnixServerSocket
+ {
+-   static { System.loadLibrary("unix-java"); }
++   static { System.load("@JNIPATH@/" + System.mapLibraryName("unix-java")); }
+    private native int native_bind(String address, boolean abs) throws IOException;
+    private native void native_close(int sock) throws IOException;
+    private native int native_accept(int sock) throws IOException;
+diff -ruN libmatthew-java-0.8/cx/ath/matthew/unix/UnixSocket.java libmatthew-java-0.8/cx/ath/matthew/unix/UnixSocket.java
+--- libmatthew-java-0.8/cx/ath/matthew/unix/UnixSocket.java	2011-10-11 14:01:51.260893231 -0400
++++ libmatthew-java-0.8/cx/ath/matthew/unix/UnixSocket.java	2011-10-11 15:00:56.194009686 -0400
+@@ -37,7 +37,7 @@
+  */
+ public class UnixSocket
+ {
+-   static { System.loadLibrary("unix-java"); }
++   static { System.load("@JNIPATH@/" + System.mapLibraryName("unix-java")); }
+    private native void native_set_pass_cred(int sock, boolean passcred) throws IOException;
+    private native int native_connect(String address, boolean abs) throws IOException;
+    private native void native_close(int sock) throws IOException;

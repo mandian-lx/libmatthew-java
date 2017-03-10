@@ -1,0 +1,10 @@
+diff --git a/Makefile b/Makefile
+index 7607a79..4f6e728 100644
+--- a/Makefile
++++ b/Makefile
+@@ -134,4 +134,4 @@ install-jar: unix-$(UNIXVER).jar cgi-$(CGIVER).jar debug-enable-$(DEBUGVER).jar
+ 	ln -sf cgi-$(CGIVER).jar $(DESTDIR)$(JARDIR)/cgi.jar
+ 	ln -sf hexdump-$(HEXVER).jar $(DESTDIR)$(JARDIR)/hexdump.jar
+ 
+-install: install-native install-jar
++install: install-native install-jar install-doc
